@@ -14,6 +14,7 @@
       label: ["second", "seconds"],    // the label to use or false if none
       startOverAfterAdding: true,      // Start the timer over after time is added with addSeconds
       smooth: false,                   // should the timer be smooth or stepping
+	  secondLabel: function (secondLeft) {return secondLeft},              // the second show label function to use
       onComplete: function () {}
     };
 
@@ -122,9 +123,9 @@
         y = this.settings.height/2;
       }
       this.pen.fillStyle = this.settings.fillStyle;
-      this.pen.fillText(secondsLeft + 1, x, y);
+      this.pen.fillText(this.settings.secondLabel(secondsLeft + 1), x, y);
       this.pen.fillStyle  = this.settings.fontColor;
-      this.pen.fillText(secondsLeft, x, y);
+      this.pen.fillText(this.settings.secondLabel(secondsLeft), x, y);
       if (drawLabel) {
         this.pen.font = "normal small-caps " + (this.settings.fontSize/3) + "px " + this.settings.fontFamily;
         this.pen.fillText(label, this.settings.width/2, this.settings.height/2 + (this.settings.fontSize/2.2));
