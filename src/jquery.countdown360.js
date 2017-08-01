@@ -14,7 +14,7 @@
       label: ["second", "seconds"],    // the label to use or false if none
       startOverAfterAdding: true,      // Start the timer over after time is added with addSeconds
       smooth: false,                   // should the timer be smooth or stepping
-	  secondLabel: function (secondLeft) {return secondLeft},              // the second show label function to use
+      secondLabel: function (secondLeft) {return secondLeft},              // the second show label function to use
       onComplete: function () {}
     };
 
